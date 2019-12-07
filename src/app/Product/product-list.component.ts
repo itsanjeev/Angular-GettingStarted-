@@ -7,7 +7,7 @@ import { IProduct } from './product';
     styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent {
-    pageTitle: string = "Product list!";
+    pageTitle: string = "Product list";
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
@@ -47,6 +47,11 @@ export class ProductListComponent {
 
     constructor(){
         this.filteredProducts =this.products;
+    }
+
+    onRatingClicked(message:string):void{
+        console.log(message);
+        this.pageTitle = "Product list :"+message;
     }
 
     performFilter(filterBy: string): IProduct[] {
